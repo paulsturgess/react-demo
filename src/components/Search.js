@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Constants from './constants'
+import Constants from '../constants'
 
 class Search extends Component {
   constructor(props, context) {

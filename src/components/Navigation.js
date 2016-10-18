@@ -12,6 +12,9 @@ function Navigation() {
         <li className="ui-navigation__link_container">
           <Link to="/search">Search</Link>
         </li>
+        <li className="ui-navigation__link_container">
+          <Link to="/todo-list">Todo List</Link>
+        </li>
       </ul>
     </nav>
   );
