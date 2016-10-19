@@ -21,7 +21,7 @@ describe('Navigation', () => {
 
   it('returns 2 links', () => {
     let links = TestUtils.scryRenderedDOMComponentsWithTag(instance, 'a')
-    expect(links.length).toEqual(2);
+    expect(links.length).toEqual(3);
   });
 
   it('returns a link to the root', () => {
@@ -32,5 +32,10 @@ describe('Navigation', () => {
   it('returns a link to the search', () => {
     let links = TestUtils.scryRenderedComponentsWithType(instance, Link)
     expect(links[1].props.to).toEqual('/search')
+  });
+
+  it('returns a link to the todo list', () => {
+    let links = TestUtils.scryRenderedComponentsWithType(instance, Link)
+    expect(links[2].props.to).toEqual('/todo-list')
   });
 });
