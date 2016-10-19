@@ -6,7 +6,15 @@ It was bootstrapped from [Create React App](https://github.com/facebookincubator
 
 [The original Readme is well worth a read](README-CREATE-REACT-APP.md)
 
-## Commands
+## Installation
+
+Get the dependencies:
+
+```
+$ npm install
+```
+
+## Running the app
 
 Boot it up via:
 
