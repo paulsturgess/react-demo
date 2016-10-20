@@ -7,7 +7,7 @@ describe('Navigation', () => {
    let instance;
    let Wrapper = React.createClass({
      render: function() {
-       return (<div>{this.props.children}</div>);
+       return this.props.children;
      }
    });
 
@@ -16,7 +16,7 @@ describe('Navigation', () => {
       <Wrapper>
         <Navigation />
       </Wrapper>
-    )
+    );
   });
 
   it('returns 2 links', () => {
