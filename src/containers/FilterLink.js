@@ -2,7 +2,7 @@
 
 import { connect } from 'react-redux'
 import { setVisibilityFilter } from '../actions'
-import TodoLink from '../components/TodoLink'
+import Link from '../components/Link'
 
 // mapStateToProps defines how to transform the current Redux store
 // state into the props you want to pass to the presentational component
@@ -25,6 +25,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 const FilterLink = connect(
   mapStateToProps,
   mapDispatchToProps
-)(TodoLink)
+)(Link)
 
 export default FilterLink
