@@ -3,11 +3,10 @@ import TestUtils from 'react/lib/ReactTestUtils';
 import TodoFilters from './TodoFilters';
 import FilterLink from '../containers/FilterLink';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import reducer from '../reducers';
+import configureMockStore from 'redux-mock-store';
+const store = configureMockStore()({});
 
 describe('TodoFilters', () => {
-  const store = createStore(reducer)
   let instance = TestUtils.renderIntoDocument(
     <Provider store={store}>
       <TodoFilters />

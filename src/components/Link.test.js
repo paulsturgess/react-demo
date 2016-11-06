@@ -2,11 +2,10 @@ import React from 'react';
 import TestUtils from 'react/lib/ReactTestUtils';
 import Link from './Link';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import reducer from '../reducers';
+import configureMockStore from 'redux-mock-store';
+const store = configureMockStore()({});
 
 describe('Link', () => {
-  const store = createStore(reducer);
   let instance, anchor, span;
   let onClick = jest.fn();
 
@@ -20,8 +19,8 @@ describe('Link', () => {
         </Provider>
       );
       anchor = TestUtils.findRenderedDOMComponentWithTag(
-       instance, 'a'
-     );
+        instance, 'a'
+      );
     });
 
     it('returns an anchor with children', () => {
