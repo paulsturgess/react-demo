@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Constants from '../constants'
 
 class Search extends Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
     this.state = {
       searchString: ''
     };
@@ -15,6 +15,8 @@ class Search extends Component {
     );
   }
 
+  // this is automatically bound because of the property initializer syntax
+  // enabled by babel-plugin-transform-class-properties
   handleChange = (event) => {
     this.setState({searchString:event.target.value});
   }
@@ -35,13 +37,14 @@ class Search extends Component {
     return(
       <input
         type="text"
-        value={this.state.searchString}
-        onChange={this.handleChange}
+        value={this.state.searchString} // Each time the state is changed, the component is rendered and this value will be updated
+        onChange={this.handleChange} // The function that will be called when the input value changes
         placeholder="Type here"
       />
     );
   }
 
+  // This could be another component e.g. SearchResults
   resultsHTML() {
     return(
       <ul>
@@ -54,10 +57,14 @@ class Search extends Component {
     );
   }
 
+  headerHTML() {
+    return(<h2>Search As You Type</h2>)
+  }
+
   render() {
     return (
       <div>
-        <h2>Search</h2>
+        {this.headerHTML()}
         <div>
           {this.searchHTML()}
           {this.resultsHTML()}

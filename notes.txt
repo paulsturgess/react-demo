@@ -15,23 +15,43 @@ cd my-app/
 npm start
 ```
 
-hot reloading
+Live reloading
 
-Entry point for the js is...
-index.js
+public/index.html
+Entry point for the js is... index.js
+Talk about router
+
+Show HelloWorld component
+- Use import to include functions, classes, components etc.
+- A component has a render method which returns the markup
+- render function is what it returns
+- extend Component from 'react'
+
+Show Clock component
+Props – essentially an object you can pass into a component.
+State - is local to the component. A component doesn't have to use state.
+State can be passed onto child components and those will be re-rendered if the
+state changes. It's top-down, only effects components below them in the tree.
+JSX – largely like html except you enclose javascript inside {}
+
+Show UI component
+Components can have child components
+e.g. the UI component contains the Navigation so it always remains on screen.
+The UI component could include the page layout.
+
+Show Navigation component
 
 The entry point
 A single render that returns your components
 and specifies the element in the html that react can hook into.
 Show public/index.html
 
-Show HellowWorld
 
-- A component has a render method which returns the markup
-- render function is what it returns
-- extend Component from 'react'
-- use import to include things
 - use export to allow your component to be included elsewhere
+
+React router
+
+Navigation is a stateless functional component
 
 Tests
 Create React App uses Jest but you can use jasmine
