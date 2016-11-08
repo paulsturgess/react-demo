@@ -1,4 +1,4 @@
-import todos from './todos';
+import { todos } from './todos';
 
 describe('todos', () => {
 
@@ -9,7 +9,7 @@ describe('todos', () => {
       text: 'Foo Bar'
     }
     it('adds a todo', () => {
-      const newState = todos([], action);
+      const newState = todos(undefined, action);
       expect(newState).toEqual(
         [{"id":1,"text":"Foo Bar","completed":false}]
       );

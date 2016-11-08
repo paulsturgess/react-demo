@@ -1,5 +1,6 @@
 // A reducer is a pure function that takes the previous state and
 // an action, and returns the next state
+import undoable, { distinctState } from 'redux-undo'
 
 export const todo = (state, action) => {
   switch (action.type) {
@@ -24,7 +25,7 @@ export const todo = (state, action) => {
   }
 }
 
-const todos = (state = [], action) => {
+export const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [
@@ -38,4 +39,8 @@ const todos = (state = [], action) => {
   }
 }
 
-export default todos
+const undoableTodos = undoable(todos, {
+  filter: distinctState()
+})
+
+export default undoableTodos
