@@ -16,6 +16,16 @@ describe('todos', () => {
     });
   });
 
+  describe('when the action is unknown', () => {
+    let action = {
+      type: 'UNKNOWN'
+    }
+    it('returns the state unchanged', () => {
+      const newState = todos([], action);
+      expect(newState).toEqual([]);
+    })
+  });
+
   describe('when the action is TOGGLE_TODO', () => {
     let originalState = [
       {"id":1,"text":"Foo Bar","completed":false},
@@ -54,3 +64,17 @@ describe('todos', () => {
     });
   });
 });
+
+import { todo } from './todos';
+
+describe('todo', () => {
+  describe('when the action type is unknown', () => {
+    let action = {
+      type: 'UNKNOWN'
+    }
+    it('returns the state unchanged', () => {
+      const newState = todo({foo: 'bar'}, action);
+      expect(newState).toEqual({foo: 'bar'});
+    })
+  });
+})

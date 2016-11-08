@@ -1,7 +1,7 @@
 // A reducer is a pure function that takes the previous state and
 // an action, and returns the next state
 
-const todo = (state, action) => {
+export const todo = (state, action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return {
