@@ -23,11 +23,21 @@ describe('AddTodoForm', () => {
       form = TestUtils.findRenderedDOMComponentWithTag(instance, 'form');
       input = TestUtils.findRenderedDOMComponentWithTag(instance, 'input');
     })
-    it('calls the addTodo action', () => {
-      input.value = 'My todo';
-      TestUtils.Simulate.change(input);
-      TestUtils.Simulate.submit(form);
-      expect(mockAction).toBeCalledWith('My todo');
-    })
+    describe('when there is an input value', () => {
+      it('calls the addTodo action', () => {
+        input.value = 'My todo';
+        TestUtils.Simulate.change(input);
+        TestUtils.Simulate.submit(form);
+        expect(mockAction).toBeCalledWith('My todo');
+      });
+    });
+
+    describe('when there is not an input value', () => {
+      it('it does not call the addTodo action', () => {
+        TestUtils.Simulate.change(input);
+        TestUtils.Simulate.submit(form);
+        expect(mockAction).toBeCalledWith('My todo');
+      });
+    });
   });
 });
