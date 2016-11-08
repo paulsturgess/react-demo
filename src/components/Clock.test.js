@@ -21,4 +21,12 @@ describe('Clock', () => {
     jasmine.clock().tick(1000); // move time on 1 second
     expect(paragraph.textContent).toEqual('It is 12:00:01 AM')
   });
+
+  describe('componentWillUnmount', () => {
+    it('clears the timer', () => {
+      spyOn(global, 'clearInterval');
+      instance.componentWillUnmount();
+      expect(global.clearInterval).toHaveBeenCalledWith(instance.timerID);
+    })
+  });
 });
