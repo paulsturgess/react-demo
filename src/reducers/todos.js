@@ -17,7 +17,7 @@ const todo = (state, action) => {
 
       return {
         ...state, // spread attribute (copies the existing state array)
-        completed: !state.completed
+        completed: !state.completed // flip the completed attribute for the todo
       }
     default:
       return state
@@ -29,14 +29,12 @@ const todos = (state = [], action) => {
     case 'ADD_TODO':
       return [
         ...state, // spread attribute (copies the existing state array)
-        todo(undefined, action)
+        todo(undefined, action) // we then add a new todo to the end of the existing state
       ]
     case 'TOGGLE_TODO':
-      return state.map(t =>
-        todo(t, action)
-      )
+      return state.map(t => todo(t, action))
     default:
-      return state
+      return state // unknown action type so just return the current state
   }
 }
 

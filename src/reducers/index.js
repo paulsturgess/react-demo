@@ -1,6 +1,6 @@
 // Reducers determine how the application's state changes in response to an action
 // Never perform side effects like API calls and routing transitions
-// Never mutate the data
+// Never mutate the data – always create a new state object
 
 // combineReducers generates a function that calls your reducers with the
 // slices of state selected according to their keys
