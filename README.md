@@ -33,3 +33,11 @@ Check test coverage via:
 ```
 $ npm test -- --coverage
 ```
+
+## Resources
+
+- https://facebook.github.io/react/
+- https://github.com/facebookincubator/create-react-app
+- http://redux.js.org/
+- https://egghead.io/courses/getting-started-with-redux
+- https://yarnpkg.com/

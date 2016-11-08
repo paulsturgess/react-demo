@@ -6,11 +6,20 @@ function Navigation() {
   return (
     <nav className="ui-navigation">
       <ul>
-        <li className="ui-navigation__link_container">
+        <li>
           <Link to="/">Home</Link>
         </li>
-        <li className="ui-navigation__link_container">
+        <li>
+          <Link to="/clock">Clock</Link>
+        </li>
+        <li>
           <Link to="/search">Search</Link>
+        </li>
+        <li>
+          <Link to="/search2">Search 2</Link>
+        </li>
+        <li>
+          <Link to="/todo-list">Todo List</Link>
         </li>
       </ul>
     </nav>
