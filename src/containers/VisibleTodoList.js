@@ -21,7 +21,7 @@ const getVisibleTodos = (todos, filter) => {
 // mapStateToProps defines how to transform the current Redux store
 // state into the props you want to pass to the presentational component
 const mapStateToProps = (state) => ({
-  todos: getVisibleTodos(state.todos, state.visibilityFilter)
+  todos: getVisibleTodos(state.todos.present, state.visibilityFilter)
 })
 
 const mapDispatchToProps = (dispatch) => ({
