@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-function Navigation() {
+const Navigation = () => {
   return (
     <nav className="ui-navigation">
       <ul>
