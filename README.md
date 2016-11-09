@@ -51,5 +51,6 @@ $ npm test -- --coverage
 - https://facebook.github.io/react/
 - https://github.com/facebookincubator/create-react-app
 - http://redux.js.org/
+- https://github.com/facebook/react/tree/master/examples
 - https://egghead.io/courses/getting-started-with-redux
 - https://yarnpkg.com/
